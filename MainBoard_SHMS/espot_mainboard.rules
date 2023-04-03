@@ -1,0 +1,108 @@
+
+(rules PCB espot_mainboard
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 29)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+  )
+  (rule
+    (width 254.0)
+    (clear 150.0)
+    (clear 127.0 (type smd_to_turn_gap))
+    (clear 37.4 (type smd-smd))
+  )
+  (padstack "Via[0-1]_800:600_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:600_um" "Via[0-1]_800:600_um" default
+  )
+  (via 
+    "Via[0-1]_800:600_um-kicad_default" "Via[0-1]_800:600_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-1]_800:600_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:600_um-kicad_default"
+  )
+  (class default
+    "Net-(ANT1-Pad1)" GND VSRAM "Net-(C2-Pad1)" VCC "Net-(C4-Pad1)" "Net-(C5-Pad1)" "Net-(C10-Pad2)"
+    "Net-(C8-Pad2)" "Net-(C11-Pad2)" "Net-(C12-Pad2)" "Net-(C14-Pad2)" "Net-(C19-Pad1)" "Net-(C20-Pad1)" "Net-(C21-Pad1)" "Net-(C22-Pad1)"
+    "Net-(C23-Pad1)" "Net-(C23-Pad2)" "I_CHRG" "I_DISCHRG" "Net-(C27-Pad1)" "Net-(C28-Pad1)" BATT "Net-(C30-Pad2)"
+    "V_MAX" "Net-(C32-Pad1)" "Net-(C32-Pad2)" "Net-(C33-Pad1)" "Net-(C33-Pad2)" VCORE "Net-(C38-Pad2)" "USB_IN"
+    "Net-(C40-Pad2)" "Net-(C41-Pad1)" "Net-(C42-Pad1)" "Net-(C43-Pad1)" "SLOW_CLK" "Net-(C44-Pad1)" "Net-(C45-Pad2)" "Net-(C46-Pad2)"
+    "Net-(C49-Pad1)" VSTBY "Net-(C52-Pad2)" "Net-(C61-Pad1)" "Net-(C62-Pad1)" "Net-(C65-Pad2)" "Net-(C66-Pad1)" "Net-(C69-Pad1)"
+    "Net-(C70-Pad1)" "Net-(C71-Pad2)" "Net-(C79-Pad2)" "Net-(C81-Pad2)" "Net-(C82-Pad2)" "Net-(C83-Pad2)" "Net-(C90-Pad2)" "Net-(C91-Pad2)"
+    "Net-(C92-Pad2)" "Net-(C93-Pad2)" "V_EXT" "Net-(D2-Pad1)" "BATT_IN" "USB_HOST_P" MISO "USB_HOST_N"
+    SCLK "I2C_CLK" MOSI "I2C_DATA" IRQ0 "CS_A0" PA17 "CS_A1"
+    PA18 "CS_A2" "BD_SEL1#" PA15 "BD_SEL2#" PA14 PA7 PA13
+    PA8 PA12 PA9 PA11 PA10 "unconnected-(J3-Pad4)" "Net-(J3-Pad3)" "Net-(J3-Pad2)"
+    "Net-(L4-Pad1)" "Net-(L5-Pad1)" "Net-(LED1-Pad1)" "Net-(LED1-Pad2)" "Net-(LED2-Pad1)" "Net-(LED2-Pad2)" TDI TDO
+    TMS TCK RESET# RXD1 TXD1 "AVR_RES#" TEMP "USB_PUP#"
+    "Net-(Q1-Pad3)" "BATT_MON_EN" "Net-(Q2-Pad3)" "Net-(Q3-Pad3)" "/Micro Memory/JTAGSEL" "/Micro Memory/BD_REV2" "/Micro Memory/BD_REV1" "/Micro Memory/BD_REV0"
+    "/Micro Memory/LED1" "/Micro Memory/LED2" "RF_PDOWN" "RF_CS#" "/Micro Memory/BMS" "Net-(R17-Pad1)" "/Micro Memory/ACC" "/Micro Memory/BYTE#"
+    "/Micro Memory/BUSY#" "/Micro Memory/CS_ROM#" "/Micro Memory/CS_RAM#" "Net-(R24-Pad1)" PWRON "USB_HP" "USB_EN#" "Net-(R33-Pad1)"
+    "Net-(R35-Pad1)" "Net-(R36-Pad2)" "Net-(R37-Pad2)" "Net-(R38-Pad2)" "EXT_PWR_MON" "USB_PWR_MON" "AVR_CS#" "Net-(R53-Pad2)"
+    "Net-(R54-Pad2)" "Net-(R55-Pad1)" "Net-(R60-Pad2)" "Net-(R61-Pad2)" "VCC_EN" "VCC_MON" "V_BATT" "Net-(R73-Pad1)"
+    "Net-(R74-Pad1)" "unconnected-(U1-Pad1)" "unconnected-(U1-Pad2)" "unconnected-(U1-Pad3)" "unconnected-(U1-Pad4)" "unconnected-(U1-Pad5)" "unconnected-(U1-Pad6)" "unconnected-(U1-Pad9)"
+    "unconnected-(U1-Pad10)" "unconnected-(U1-Pad11)" "unconnected-(U1-Pad12)" "unconnected-(U1-Pad13)" "unconnected-(U1-Pad14)" "unconnected-(U1-Pad16)" "unconnected-(U1-Pad17)" "unconnected-(U1-Pad18)"
+    "unconnected-(U1-Pad21)" "unconnected-(U1-Pad22)" "unconnected-(U1-Pad23)" "unconnected-(U1-Pad24)" "unconnected-(U1-Pad35)" "/Micro Memory/AVR_CS#" SFD FIFOP
+    "unconnected-(U1-Pad70)" "unconnected-(U1-Pad74)" "unconnected-(U1-Pad77)" "unconnected-(U1-Pad78)" "RF_RST#" FIFO CCA "unconnected-(U1-Pad85)"
+    "unconnected-(U1-Pad92)" "unconnected-(U1-Pad95)" "unconnected-(U1-Pad96)" "unconnected-(U1-Pad120)" "unconnected-(U1-Pad121)" IRQ1 "USB_DEV_N" "USB_DEV_P"
+    "/Micro Memory/BS0#" "/Micro Memory/A1" "/Micro Memory/A2" "/Micro Memory/A3" "/Micro Memory/A4" "/Micro Memory/A5" "/Micro Memory/A6" "/Micro Memory/A7"
+    "/Micro Memory/A8" "/Micro Memory/A9" "/Micro Memory/A10" "unconnected-(U1-Pad144)" "/Micro Memory/A11" "/Micro Memory/A12" "/Micro Memory/A13" "/Micro Memory/A14"
+    "/Micro Memory/A15" "/Micro Memory/A16" "/Micro Memory/A17" "/Micro Memory/A18" "/Micro Memory/A19" "/Micro Memory/A20" "/Micro Memory/A21" "unconnected-(U1-Pad160)"
+    "unconnected-(U1-Pad161)" "unconnected-(U1-Pad162)" "unconnected-(U1-Pad163)" "unconnected-(U1-Pad168)" "unconnected-(U1-Pad169)" "/Micro Memory/OE#" "/Micro Memory/WE#" "/Micro Memory/BS1#"
+    "unconnected-(U1-Pad173)" "unconnected-(U1-Pad174)" "unconnected-(U1-Pad175)" "unconnected-(U1-Pad176)" "unconnected-(U1-Pad177)" "unconnected-(U1-Pad178)" "/Micro Memory/D0" "/Micro Memory/D1"
+    "/Micro Memory/D2" "/Micro Memory/D3" "/Micro Memory/D4" "/Micro Memory/D5" "/Micro Memory/D6" "/Micro Memory/D7" "/Micro Memory/D8" "/Micro Memory/D9"
+    "/Micro Memory/D10" "/Micro Memory/D11" "/Micro Memory/D12" "/Micro Memory/D13" "/Micro Memory/D14" "/Micro Memory/D15" "unconnected-(U1-Pad201)" "unconnected-(U1-Pad202)"
+    "unconnected-(U1-Pad203)" "unconnected-(U1-Pad204)" "unconnected-(U1-Pad205)" "unconnected-(U1-Pad206)" "unconnected-(U1-Pad207)" "unconnected-(U1-Pad208)" "unconnected-(U2-Pad13)" "unconnected-(U4-Pad47)"
+    "unconnected-(U4-Pad46)" "unconnected-(U4-Pad40)" "unconnected-(U4-Pad36)" "unconnected-(U4-Pad16)" "unconnected-(U4-Pad13)" "unconnected-(U4-Pad12)" "unconnected-(U4-Pad11)" "unconnected-(U7-Pad24)"
+    "unconnected-(U7-Pad23)" "unconnected-(U7-Pad20)" "unconnected-(U7-Pad17)" "unconnected-(U7-Pad14)" "unconnected-(U7-Pad13)" "unconnected-(U10-Pad3)"
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 254.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    (clearance_class "kicad_default")
+    (via_rule "kicad_default")
+    (rule
+      (width 254.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
